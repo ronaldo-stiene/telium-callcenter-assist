@@ -1,0 +1,42 @@
+.cc-title-font {
+    font-family: 'Tomorrow', sans-serif;
+    font-weight: bold;
+}
+.cc-subtitle-font {
+    font-family: 'Tomorrow', sans-serif;
+}
+
+.cc-bg-primary {
+    background-color: #175078!important;
+}
+.cc-bg-light {
+    background-color: #177fb3!important;
+    background-color: #e8ebee!important;
+    /* background-color: #1d99d6!important; */
+}
+
+
+.cc-border-light {
+    border-color: #cdd3d9!important;
+}
+
+.cc-btn-primary {
+    background-color: #175078!important;
+    border-color: #175078;
+    color: #ffffff!important;
+}
+.cc-btn-primary:hover {
+    background-color: #144466!important;
+    border-color: #144466;
+    color: #ffffff!important;
+}
+.cc-btn-primary:active {
+    background-color: #103752!important;
+    border-color: #103752;
+    color: #ffffff!important;
+}
+.cc-btn-primary.active {
+    background-color: #175078!important;
+    border-color: #175078;
+    color: #ffffff!important;
+}
