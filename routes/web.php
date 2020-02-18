@@ -12,3 +12,5 @@
 */
 
 Route::get('/', 'CallcenterController@index');
+Route::post('/normal', 'CallcenterController@normal')->name('normal-call');
+Route::post('/invalid', 'CallcenterController@invalid')->name('invalid-call');

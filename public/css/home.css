@@ -14,3 +14,7 @@
 .cc-textarea-round {
     border-radius: 0 0 .25rem .25rem!important;
 }
+
+#cc-invalid-call-form {
+    display: none;
+}

@@ -12,15 +12,15 @@ $('.cc-input-check').click(function () {
         $(this).find(".cc-input-select").attr('disabled', true);
     }
 }); 
-$('.cc-normal-call-request').click(function () {
-    if ($(this).find('.cc-request-type').val() == 'rds') {
-        $(this).find(".cc-request-value").attr('placeholder', "Requisição");
+$('.cc-normal-call-reason').click(function () {
+    if ($(this).find('.cc-reason-type').val() == 'rds') {
+        $(this).find(".cc-reason-value").attr('placeholder', "Requisição");
     }
-    if ($(this).find('.cc-request-type').val() == 'in') {
-        $(this).find(".cc-request-value").attr('placeholder', "Incidente");
+    if ($(this).find('.cc-reason-type').val() == 'in') {
+        $(this).find(".cc-reason-value").attr('placeholder', "Incidente");
     }
-    if ($(this).find('.cc-request-type').val() == 'tran') {
-        $(this).find(".cc-request-value").attr('placeholder', "Funcionário ou Setor");
+    if ($(this).find('.cc-reason-type').val() == 'tran') {
+        $(this).find(".cc-reason-value").attr('placeholder', "Funcionário ou Setor");
     }
 }); 
 

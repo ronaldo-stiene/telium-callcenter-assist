@@ -35,8 +35,19 @@
     border-color: #103752;
     color: #ffffff!important;
 }
-.cc-btn-primary.active {
+
+.cc-btn-outline-primary {
+    background-color: transparent!important;
+    border-color: #175078;
+    color: #175078!important;
+}
+.cc-btn-outline-primary:hover {
     background-color: #175078!important;
     border-color: #175078;
+    color: #ffffff!important;
+}
+.cc-btn-outline-primary:active {
+    background-color: #103752!important;
+    border-color: #103752;
     color: #ffffff!important;
 }

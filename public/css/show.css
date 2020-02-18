@@ -1,0 +1,10 @@
+#cc-full-text-box p {
+    margin-bottom: 0;
+}
+
+.cc-clipboard-textarea {
+    opacity: .01;
+    height:0;
+    position:absolute;
+    z-index: -1;
+}
