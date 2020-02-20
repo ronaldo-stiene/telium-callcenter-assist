@@ -1,3 +1,18 @@
+/**
+ * -----------------------------------------------------------------------
+ * Scripts dos formulários da página inicial.
+ * -----------------------------------------------------------------------
+ *
+ * Esse arquivo contém os scripts usados nos formulários de chamadas
+ * da página principal.
+ *
+ * @author Ronaldo Stiene <ronaldo.stiene@outlook.com>
+ * @since 18/02/2020
+ */
+
+/**
+ * Ativa e desativa os inputs com base no checkbox.
+ */
 $('.cc-input-check').click(function () {
     if ($(this).find('.cc-input-checkbox').is(':checked')) {
         $(this).find(".cc-input-text").attr('readonly', false);
@@ -12,6 +27,10 @@ $('.cc-input-check').click(function () {
         $(this).find(".cc-input-select").attr('disabled', true);
     }
 }); 
+
+/**
+ * Muda o placeholder da requisição de uma chamada normal.
+ */
 $('.cc-normal-call-reason').click(function () {
     if ($(this).find('.cc-reason-type').val() == 'rds') {
         $(this).find(".cc-reason-value").attr('placeholder', "Requisição");
@@ -24,6 +43,9 @@ $('.cc-normal-call-reason').click(function () {
     }
 }); 
 
+/**
+ * Funções que alteram os formulários visíveis
+ */
 $("#cc-normal-call-btn").click(function () {
     $("#cc-invalid-call-form").hide("slide", { direction: "left" }, 400);
     $("#cc-normal-call-form").delay(400).show("slide", { direction: "left" }, 400);
@@ -47,7 +69,11 @@ $("#cc-invalid-call-btn").click(function () {
     }
 });
 
-
+/**
+ * Função de obtenção de data.
+ * 
+ * @returns {string}
+ */
 function getFormatedDate(){
     var date = new Date();
     return String(date.getDate()).padStart(2, '0') + "/" + 
@@ -57,6 +83,12 @@ function getFormatedDate(){
     String(date.getMinutes()).padStart(2, '0');
 }
 
+/**
+ * Iguala os valores dos inputs de ambos os formulários.
+ * 
+ * @param {string} from 
+ * @param {string} to 
+ */
 function equalInputs(from, to) {
     $("#cc-" + to + "-form" + " [name='name']").val( $("#cc-" + from + "-form" + " [name='name']").prop('value') )
     $("#cc-" + to + "-form" + " [name='gender']").val( $("#cc-" + from + "-form" + " [name='gender']").prop('value') )
@@ -64,6 +96,13 @@ function equalInputs(from, to) {
     $("#cc-" + to + "-form" + " [name='phone']").val( $("#cc-" + from + "-form" + " [name='phone']").prop('value') )
     $("#cc-" + to + "-form" + " [name='date']").val( $("#cc-" + from + "-form" + " [name='date']").prop('value') )
 }
+
+/**
+ * Ativa os inputs após os valores serem igualados.
+ * 
+ * @param {string} from 
+ * @param {string} to 
+ */
 function activateInputs(from, to) {
     if ($("#cc-" + from + "-form" + " [name='name']").prop('value') != "") {
         if (! $("#cc-" + to + "-name-checkbox").is(':checked')) {

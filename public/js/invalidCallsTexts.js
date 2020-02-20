@@ -1,7 +1,30 @@
+/**
+ * -----------------------------------------------------------------------
+ * Scripts das chamadas por engano
+ * -----------------------------------------------------------------------
+ *
+ * Esse arquivo contém os scripts usados no formulário das chamadas por 
+ * engano. Eles realizam:
+ * - Geração do texto das chamadas por engano.
+ *
+ * @author Ronaldo Stiene <ronaldo.stiene@outlook.com>
+ * @since 18/02/2020
+ */
+
+/**
+ * Recarrega o texto a cada alteração de tipo, caso o campo esteja vazio
+ */
 $('.cc-invalid-call-request').click(function () {
-    textReload(this);
+    if ($("#cc-invalid-call-details").html() == "") {
+        textReload(this);
+    }
 });
 
+/**
+ * Recarrega o texto.
+ * 
+ * @param {string} element 
+ */
 function textReload(element) {
     var name = $("#cc-invalid-call-form [name='name']").val();
     var gender = $("#cc-invalid-call-form [name='gender']").val();
@@ -41,6 +64,13 @@ function textReload(element) {
     $("#cc-invalid-call-details").html(text);
 }
 
+/**
+ * Insere o texto relacionado ao contatante e sua empresa.
+ * 
+ * @param {string} name 
+ * @param {string} gender 
+ * @param {string} company 
+ */
 function getClientText(name, gender, company) {
     var text = "";
     if (name != "") {
@@ -61,6 +91,11 @@ function getClientText(name, gender, company) {
     return text;
 }
 
+/**
+ * Gera o texto da transferência na Tentiva de contato.
+ * 
+ * @param {string} tran 
+ */
 function getTranText(tran) {
     if (tran != "") {
         return " " + tran;
@@ -69,6 +104,13 @@ function getTranText(tran) {
     
 }
 
+/**
+ * Gera o texto da Ligação Encerrada.
+ * 
+ * @param {string} name 
+ * @param {string} gender 
+ * @param {string} company 
+ */
 function getEndedCallText(name, gender, company) {
     var text;
     text = "Chamada recebida";
@@ -77,6 +119,13 @@ function getEndedCallText(name, gender, company) {
     return text;
 }
 
+/**
+ * Gera o texto da Ligação por Engano.
+ * 
+ * @param {string} name
+ * @param {string} gender 
+ * @param {string} company 
+ */
 function getWrongCallText(name, gender, company) {
     var text;
     text = "Chamada recebida";
@@ -85,6 +134,13 @@ function getWrongCallText(name, gender, company) {
     return text;
 }
 
+/**
+ * Gera o texto da Ligação sem Comunicação.
+ * 
+ * @param {string} name
+ * @param {string} gender
+ * @param {string} company
+ */
 function getMutedCallText(name, gender, company) {
     var text;
     text = "Chamada recebida";
@@ -93,6 +149,14 @@ function getMutedCallText(name, gender, company) {
     return text;
 }
 
+/**
+ * Gera o texto da Tentativa de contato.
+ * 
+ * @param {string} name
+ * @param {string} gender
+ * @param {string} company
+ * @param {string} tran
+ */
 function getContactCallText(name, gender, company, tran) {
     var text;
     text = "Chamada recebida";
@@ -101,7 +165,14 @@ function getContactCallText(name, gender, company, tran) {
     return text;
 }
 
-function getOfferCallText(name, gender, company, tran) {
+/**
+ * Gera o texto da Oferta de Serviços.
+ * 
+ * @param {string} name
+ * @param {string} gender
+ * @param {string} company
+ */
+function getOfferCallText(name, gender, company) {
     var text;
     text = "Chamada recebida";
     text = text + getClientText(name, gender, company);
@@ -111,7 +182,14 @@ function getOfferCallText(name, gender, company, tran) {
     return text;
 }
 
-function getTelemarketingCallText(name, gender, company, tran) {
+/**
+ * Gera o texto da Ligação de Telemarketing.
+ * 
+ * @param {string} name 
+ * @param {string} gender 
+ * @param {string} company 
+ */
+function getTelemarketingCallText(name, gender, company) {
     var text;
     text = "Chamada recebida";
     text = text + getClientText(name, gender, company);

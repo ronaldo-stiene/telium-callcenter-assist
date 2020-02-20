@@ -1,7 +1,21 @@
+/**
+ * -----------------------------------------------------------------------
+ * Estilos dos componentes da view Show
+ * -----------------------------------------------------------------------
+ *
+ * Esse arquivo contém os estilos dos componentes da página de exibição
+ * dos dados do formulário.
+ *
+ * @author Ronaldo Stiene <ronaldo.stiene@outlook.com>
+ * @since 18/02/2020
+ */
+
+/* Paragrafos dos dados. */
 #cc-full-text-box p {
     margin-bottom: 0;
 }
 
+/* TextArea invisíveis */
 .cc-clipboard-textarea {
     opacity: .01;
     height:0;

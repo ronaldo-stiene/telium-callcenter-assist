@@ -12,5 +12,5 @@
 */
 
 Route::get('/', 'CallcenterController@index');
-Route::post('/normal', 'CallcenterController@normal')->name('normal-call');
-Route::post('/invalid', 'CallcenterController@invalid')->name('invalid-call');
+Route::post('/chamada-normal', 'CallcenterController@normal')->name('normal-call');
+Route::post('/chamada-por-engano', 'CallcenterController@invalid')->name('invalid-call');

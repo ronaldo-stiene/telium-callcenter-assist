@@ -14,7 +14,6 @@
             <button type="button" class="btn cc-btn-primary my-2 mt-4" onclick="copyFullText('cc-full-text-box')">Copiar todo conteúdo para área de transferência</button>
         </div>
     </section>
-
     <section class="bg-white my-4 p-4 border shadow-sm">
         <div class="border shadow p-3" id="cc-one-line-text-box">
             {{$oneLine}}
@@ -41,6 +40,6 @@
 @endsection
 
 @section('scripts')
-<script src="/js/show.js"></script>
-<script src="/js/home.js"></script>
+<script src="/js/copyClipboard.js"></script>
+<script src="/js/homeForms.js"></script>
 @endsection

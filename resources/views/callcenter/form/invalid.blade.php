@@ -87,13 +87,13 @@
                         <option value="telemarketing">Telemarketing</option>
                         <option value="other">Outros Casos</option>
                     </select>
-                    <input class="form-control cc-invalid-call-request-value" type="text" name="reason" placeholder="Requisição">
+                    <input class="form-control cc-invalid-call-request-value" type="text" name="reason" placeholder="Requisição" required>
                 </div>
             </div>
         </div>
         <div class="form-group">
             <label class="cc-bg-light border-top border-left border-right cc-border-light rounded-top p-2 col-12 text-center mb-0" for="cc-details-invalid-call">Detalhes</label>
-            <textarea class="form-control cc-textarea-min-height cc-textarea-round" name="details" id="cc-invalid-call-details" placeholder="Detalhes da tratativa"></textarea>
+            <textarea class="form-control cc-textarea-min-height cc-textarea-round" name="details" id="cc-invalid-call-details" placeholder="Detalhes da tratativa" required></textarea>
         </div>
         <button class="btn cc-btn-outline-primary col-8 offset-2" onclick="textReload('.cc-invalid-call-request')" type="button">Recarregar Texto</button>
     </section>

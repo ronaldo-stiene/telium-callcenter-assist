@@ -1,3 +1,18 @@
+/**
+ * -----------------------------------------------------------------------
+ * Estilos de layout do projeto.
+ * -----------------------------------------------------------------------
+ *
+ * Esse arquivo contém os estilos de layout do projeto.
+ *
+ * @author Ronaldo Stiene <ronaldo.stiene@outlook.com>
+ * @since 18/02/2020
+ */
+
+/*************************************\
+|*              Títulos              *|
+\*************************************/
+
 .cc-title-font {
     font-family: 'Tomorrow', sans-serif;
     font-weight: bold;
@@ -6,19 +21,31 @@
     font-family: 'Tomorrow', sans-serif;
 }
 
+
+/*************************************\
+|*            Background             *|
+\*************************************/
+
 .cc-bg-primary {
     background-color: #175078!important;
 }
 .cc-bg-light {
-    background-color: #177fb3!important;
     background-color: #e8ebee!important;
-    /* background-color: #1d99d6!important; */
 }
 
+
+/*************************************\
+|*              Bordas               *|
+\*************************************/
 
 .cc-border-light {
     border-color: #cdd3d9!important;
 }
+
+
+/*************************************\
+|*        Botões Preenchidos         *|
+\*************************************/
 
 .cc-btn-primary {
     background-color: #175078!important;
@@ -35,6 +62,11 @@
     border-color: #103752;
     color: #ffffff!important;
 }
+
+
+/*************************************\
+|*       Botões Transparentes        *|
+\*************************************/
 
 .cc-btn-outline-primary {
     background-color: transparent!important;

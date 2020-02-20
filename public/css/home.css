@@ -1,20 +1,37 @@
+/**
+ * -----------------------------------------------------------------------
+ * Estilos dos componentes da view Home
+ * -----------------------------------------------------------------------
+ *
+ * Esse arquivo contém os estilos dos componentes da página dos 
+ * formulários.
+ *
+ * @author Ronaldo Stiene <ronaldo.stiene@outlook.com>
+ * @since 18/02/2020
+ */
+
+/* Posicionamento de imagem */
 .cc-img-cover {
     object-fit: scale-down;
 }
 
+/* Tamanho máximo */
 .cc-max-size {
     max-width: 7em;
     max-height: 7em;
 }
 
+/* Altura mínima do textarea */
 .cc-textarea-min-height {
     min-height: 90px;
 }
 
+/* Borda do textarea */
 .cc-textarea-round {
     border-radius: 0 0 .25rem .25rem!important;
 }
 
+/* Visualização das chamadas inválidas */
 #cc-invalid-call-form {
     display: none;
 }

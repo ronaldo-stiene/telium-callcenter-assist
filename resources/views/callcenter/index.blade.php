@@ -45,5 +45,5 @@
 
 @section('scripts')
 <script src="/js/invalidCallsTexts.js"></script>
-<script src="/js/home.js"></script>
+<script src="/js/homeForms.js"></script>
 @endsection

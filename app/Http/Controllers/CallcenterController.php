@@ -5,29 +5,51 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
+/**
+ * -----------------------------------------------------------------------
+ * Controller do Formulário de Chamadas
+ * -----------------------------------------------------------------------
+ * 
+ * Esta classe contém os métodos controladores para as operações lógicas 
+ * do formulrio de chamadas.
+ * 
+ * @author Ronaldo Stiene <ronaldo.stiene@outlook.com>
+ * @since 18/02/2020
+ */
 class CallcenterController extends Controller
 {
+    /**
+     * Exibe a view principal
+     *
+     * @return View
+     */
     public function index(): View
     {
         return view('callcenter.index');
     }
 
+    /**
+     * Gera o texto e retorna a view de documentação de uma chamada normal.
+     *
+     * @param Request $request
+     * @return View
+     */
     public function normal(Request $request): View
     {
-        $text = $this->getText($request->name_checkbox, $request->name, "Nome: ");
-        $text .= $this->getText($request->company_checkbox, $request->company, "Empresa: ");
+        $text = $this->getTextLine($request->name_checkbox, $request->name, "Nome: ");
+        $text .= $this->getTextLine($request->company_checkbox, $request->company, "Empresa: ");
         $text .= ($request->name_checkbox || $request->company_checkbox ) ? "<br>" : "";
-        $text .= $this->getText($request->id_checkbox, $request->id, $request->id_type . ": ");
-        $text .= $this->getText($request->event_checkbox, $request->event, "Evento: ");
+        $text .= $this->getTextLine($request->id_checkbox, $request->id, $request->id_type . ": ");
+        $text .= $this->getTextLine($request->event_checkbox, $request->event, "Evento: ");
         $text .= ($request->id_checkbox || $request->event_checkbox ) ? "<br>" : "";
         $text .= $this->getReason($request->reason_type, $request->reason);
         $text .= ($request->reason ) ? "<br>" : "";
         $text .= ($request->details ) ? "<hr>" : "";
-        $text .= $this->getText(true, str_replace("\n", "<br>", $request->details), "" );
+        $text .= $this->getTextLine(true, str_replace("\n", "<br>", $request->details), "" );
         $text .= ($request->details ) ? "<hr>" : "";
         $text .= ($request->phone_checkbox || $request->date_checkbox ) ? "<br>" : "";
-        $text .= $this->getText($request->phone_checkbox, $request->phone, "Nº: ");
-        $text .= $this->getText($request->date_checkbox, $request->date, "Data: ");
+        $text .= $this->getTextLine($request->phone_checkbox, $request->phone, "Nº: ");
+        $text .= $this->getTextLine($request->date_checkbox, $request->date, "Data: ");
 
         $oneLine = "- " . $this->getOneLineText($text);
 
@@ -38,20 +60,26 @@ class CallcenterController extends Controller
         return view('callcenter.show', compact('text', 'oneLine', 'details', 'invalidCall') );
     }
 
+    /**
+     * Gera o texto e retorna a view de documentação de uma chamada por engano.
+     *
+     * @param Request $request
+     * @return View
+     */
     public function invalid(Request $request): View
     {
-        $text = $this->getText($request->name_checkbox, $request->name, "Nome: ");
-        $text .= $this->getText($request->company_checkbox, $request->company, "Empresa: ");
-        $text .= $this->getText($request->tran_checkbox, $request->tran, "Transferência: ");
+        $text = $this->getTextLine($request->name_checkbox, $request->name, "Nome: ");
+        $text .= $this->getTextLine($request->company_checkbox, $request->company, "Empresa: ");
+        $text .= $this->getTextLine($request->tran_checkbox, $request->tran, "Transferência: ");
         $text .= ($request->name_checkbox || $request->company_checkbox || $request->tran_checkbox) ? "<br>" : "";
-        $text .= $this->getText(true, $request->reason, "" );
+        $text .= $this->getTextLine(true, $request->reason, "" );
         $text .= ($request->reason ) ? "<br>" : "";
         $text .= ($request->details ) ? "<hr>" : "";
-        $text .= $this->getText(true, str_replace("\n", "<br>", $request->details), "" );
+        $text .= $this->getTextLine(true, str_replace("\n", "<br>", $request->details), "" );
         $text .= ($request->details ) ? "<hr>" : "";
         $text .= ($request->phone || $request->date ) ? "<br>" : "";
-        $text .= $this->getText(true, $request->phone, "Nº: ");
-        $text .= $this->getText(true, $request->date, "Data: ");
+        $text .= $this->getTextLine(true, $request->phone, "Nº: ");
+        $text .= $this->getTextLine(true, $request->date, "Data: ");
 
         $oneLine = $this->getOneLineText($text);
 
@@ -62,7 +90,15 @@ class CallcenterController extends Controller
         return view('callcenter.show', compact('text', 'oneLine', 'details', 'invalidCall') );
     }
 
-    private function getText($check, $value, $field): String
+    /**
+     * Realiza a inserção de uma linha no texto.
+     *
+     * @param bool $check
+     * @param string $value
+     * @param string $field
+     * @return String
+     */
+    private function getTextLine($check, $value, $field): String
     {
         if ($check) {
             return "<p>". $this->insertText( $field . $value ) . "</p>\n";
@@ -70,7 +106,15 @@ class CallcenterController extends Controller
         return "";
     }
 
-    private function getReasonText($value, $field, $type): String
+    /**
+     * Realiza a inserção da linha da requisição.
+     *
+     * @param bool $value
+     * @param string $field
+     * @param string $type
+     * @return String
+     */
+    private function getReasonTextLine($value, $field, $type): String
     {
         if ($value) {
             return "<p>". $this->insertText( $field . $value) . "</p>\n";
@@ -78,7 +122,14 @@ class CallcenterController extends Controller
         return $type;
     }
 
-    private function insertText($text): String
+    /**
+     * Realiza as operações necessárias para inserir um texto:
+     * - Incluí um ponto final, caso não tenha.
+     *
+     * @param string $text
+     * @return String
+     */
+    private function insertText(string $text): String
     {
         if (substr($text, -1) != ".") {
             return $text . ".";
@@ -86,7 +137,13 @@ class CallcenterController extends Controller
         return $text;
     }
 
-    private function getOneLineText($text)
+    /**
+     * Transforma o texto completo em sua versão de uma linha.
+     *
+     * @param string $text
+     * @return String
+     */
+    private function getOneLineText(string $text): String
     {
         $newText = str_replace("<br>", "", $text);
         $newText = str_replace("\n", "", $newText);
@@ -96,16 +153,23 @@ class CallcenterController extends Controller
         return $newText;
     }
 
-    private function getReason($type, $reason): String
+    /**
+     * Verifica o tipo de requisição da aplicação.
+     *
+     * @param string $type
+     * @param string $reason
+     * @return String
+     */
+    private function getReason(string $type, string $reason): String
     {
         if ($type == "rds") {
-            return $this->getReasonText($reason, "RDS: ", "Requisição de Serviço");
+            return $this->getReasonTextLine($reason, "RDS: ", "Requisição de Serviço");
         }
         if ($type == "in") {
-            return $this->getReasonText($reason, "IN: ", "Incidente");
+            return $this->getReasonTextLine($reason, "IN: ", "Incidente");
         }
         if ($type == "tran") {
-            return $this->getReasonText($reason, "Transferência: ", "Transferência de Ligação");
+            return $this->getReasonTextLine($reason, "Transferência: ", "Transferência de Ligação");
         }
     }
 }
