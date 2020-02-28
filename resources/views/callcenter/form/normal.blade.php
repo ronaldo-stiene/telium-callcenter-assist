@@ -109,7 +109,7 @@
         </div>
         <div class="form-group">
             <label class="cc-bg-light border-top border-left border-right cc-border-light rounded-top p-2 col-12 text-center mb-0" for="cc-normal-call-details">Detalhes</label>
-            <textarea class="form-control cc-textarea-min-height cc-textarea-round" id="cc-normal-call-details" name="details" placeholder="Detalhes da tratativa" required></textarea>
+            <textarea class="form-control cc-textarea-min-height cc-textarea-round" id="cc-normal-call-details" name="details" placeholder="Detalhes da tratativa"></textarea>
         </div>
     </section>
 

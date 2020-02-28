@@ -44,9 +44,7 @@ class CallcenterController extends Controller
         $text .= ($request->id_checkbox || $request->event_checkbox ) ? "<br>" : "";
         $text .= $this->getReason($request->reason_type, $request->reason);
         $text .= ($request->reason ) ? "<br>" : "";
-        $text .= ($request->details ) ? "<hr>" : "";
-        $text .= $this->getTextLine(true, str_replace("\n", "<br>", $request->details), "" );
-        $text .= ($request->details ) ? "<hr>" : "";
+        $text .= $this->getDetails($request->details);
         $text .= ($request->phone_checkbox || $request->date_checkbox ) ? "<br>" : "";
         $text .= $this->getTextLine($request->phone_checkbox, $request->phone, "Nº: ");
         $text .= $this->getTextLine($request->date_checkbox, $request->date, "Data: ");
@@ -74,14 +72,12 @@ class CallcenterController extends Controller
         $text .= ($request->name_checkbox || $request->company_checkbox || $request->tran_checkbox) ? "<br>" : "";
         $text .= $this->getTextLine(true, $request->reason, "" );
         $text .= ($request->reason ) ? "<br>" : "";
-        $text .= ($request->details ) ? "<hr>" : "";
-        $text .= $this->getTextLine(true, str_replace("\n", "<br>", $request->details), "" );
-        $text .= ($request->details ) ? "<hr>" : "";
+        $text .= $this->getDetails($request->details);
         $text .= ($request->phone || $request->date ) ? "<br>" : "";
         $text .= $this->getTextLine(true, $request->phone, "Nº: ");
         $text .= $this->getTextLine(true, $request->date, "Data: ");
 
-        $oneLine = $this->getOneLineText($text);
+        $oneLine = "- " . $this->getOneLineText($text);
 
         $details = str_replace("\n", "<br>", $request->details);
 
@@ -171,5 +167,16 @@ class CallcenterController extends Controller
         if ($type == "tran") {
             return $this->getReasonTextLine($reason, "Transferência: ", "Transferência de Ligação");
         }
+    }
+
+    private function getDetails($details)
+    {
+        $text = null;
+        if ($details != null) {
+            $text .= ($details ) ? "<hr>" : "";
+            $text .= "<p>" . str_replace("\n", "<br>", $details) . "</p>\n";;
+            $text .= ($details ) ? "<hr>" : "";
+        }
+        return $text;
     }
 }
