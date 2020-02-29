@@ -32,7 +32,7 @@
         </div>
         <div class="form-row my-2">
             <div class="col">
-                <div class="input-group cc-input-check">
+                <div class="input-group cc-input-check" id="cc-id-input">
                     <div class="input-group-prepend">
                         <div class="input-group-text cc-bg-light">
                             <label class="m-0 mr-2" for="cc-id-checkbox">Cadastro</label>
@@ -40,7 +40,7 @@
                         </div>
                     </div>
                     <select class="custom-select cc-input-select col-2" name="id_type">
-                        <option value="ID">ID</option>
+                        <option value="ID" selected>ID</option>
                         <option value="CNPJ">CNPJ</option>
                         <option value="CPF">CPF</option>
                         <option value="E-Mail">E-Mail</option>
@@ -64,13 +64,18 @@
         </div>
         <div class="form-row my-2">
             <div class="col">
-                <div class="input-group cc-input-check">
+                <div class="input-group cc-input-check cc-phone-input">
                     <div class="input-group-prepend">
                         <div class="input-group-text cc-bg-light">
                             <label class="m-0 mr-2" for="cc-normal-call-phone-checkbox">Telefone</label>
                             <input class="cc-input-checkbox" id="cc-normal-call-phone-checkbox" name="phone_checkbox" type="checkbox">
                         </div>
                     </div>
+                    <select class="custom-select cc-input-select col-3" name="phone_country" disabled>
+                        <option value="branch">Ramal</option>
+                        <option value="br" selected>BR (+55)</option>
+                        <option value="us">US (+1)</option>
+                    </select>
                     <input class="form-control cc-input-text" type="text" name="phone" placeholder="Telefone" readonly>
                 </div>
             </div>

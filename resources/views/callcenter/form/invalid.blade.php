@@ -43,13 +43,18 @@
         </div>
         <div class="form-row my-2">
             <div class="col">
-                <div class="input-group cc-input-check">
+                <div class="input-group cc-input-check cc-phone-input">
                     <div class="input-group-prepend">
                         <div class="input-group-text cc-bg-light">
                             <label class="m-0 mr-2">Telefone</label>
-                            <input class="cc-input-checkbox" id="cc-invalid-call-phone-checkbox" name="phone_checkbox" type="checkbox" checked>
+                            <input class="cc-input-checkbox" id="cc-invalid-call-phone-checkbox" name="phone_checkbox" type="checkbox" checked disabled>
                         </div>
                     </div>
+                    <select class="custom-select cc-input-select col-3" name="phone_country">
+                        <option value="branch">Ramal</option>
+                        <option value="br" selected>BR (+55)</option>
+                        <option value="us">US (+1)</option>
+                    </select>
                     <input class="form-control cc-input-text" type="text" name="phone" placeholder="Telefone" required>
                 </div>
             </div>
@@ -58,7 +63,7 @@
                     <div class="input-group-prepend">
                         <div class="input-group-text cc-bg-light">
                             <label class="m-0 mr-2">Data</label>
-                            <input class="cc-input-checkbox" id="cc-invalid-call-date-checkbox" name="date_checkbox" type="checkbox" checked>
+                            <input class="cc-input-checkbox" id="cc-invalid-call-date-checkbox" name="date_checkbox" type="checkbox" checked disabled>
                         </div>
                     </div>
                     <input class="form-control cc-input-date" type="text" name="date" placeholder="Data e Hora" required>

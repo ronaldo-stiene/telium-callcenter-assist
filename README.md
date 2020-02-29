@@ -2,8 +2,6 @@
 
 Esta aplicação se trata de um assitente de documentação de ligações recebidas.
 
----
-
 ## Conteúdo
 
 - [Conteúdo](#conteúdo)
@@ -17,8 +15,6 @@ Esta aplicação se trata de um assitente de documentação de ligações recebi
         - [Informações em Uma Linha](#informações-em-uma-linha)
     - [Finalizar Chamada](#finalizar-chamada)
 
----
-
 ## Requisitos
 
 Aplicação construida com as tecnologias:
@@ -31,8 +27,6 @@ Nenhuma extensão específica do PHP é utilizada.
 
 Também não é usado nenhum banco de dados.
 
----
-
 ## Instalação
 
 Após realizar o pull do projeto:
@@ -42,8 +36,6 @@ Após realizar o pull do projeto:
 ```sh
 composer update
 ```
-
----
 
 ## Utilização
 
@@ -160,3 +152,12 @@ Também é possível utilizar a aplicação apenas como guia durante uma ligaç�
 Para resetar o formulário, existe a opção `Finalizar Chamada`.
 
 Quando escolhida, é exibido uma mensagem perguntando se deseja finalizar a chamada.
+
+## Versões
+
+- **v1.1**:
+    - Adicionado a mascará para o Telefone, Data, CNPJ, CPF e Evento.
+    - Adicionado tipos de telefone:
+        - BR (+55)
+        - US (+1)
+        - Ramal
