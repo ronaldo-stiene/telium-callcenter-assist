@@ -46,4 +46,5 @@
 @section('scripts')
 <script src="/js/invalidCallsTexts.js"></script>
 <script src="/js/homeForms.js"></script>
+<script src="/js/inputMask.js"></script>
 @endsection

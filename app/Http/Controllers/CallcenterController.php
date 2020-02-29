@@ -15,6 +15,7 @@ use Illuminate\View\View;
  * 
  * @author Ronaldo Stiene <ronaldo.stiene@outlook.com>
  * @since 18/02/2020
+ * @version v1.0.0
  */
 class CallcenterController extends Controller
 {
@@ -48,7 +49,7 @@ class CallcenterController extends Controller
         $text .= $this->getTextLine(true, str_replace("\n", "<br>", $request->details), "" );
         $text .= ($request->details ) ? "<hr>" : "";
         $text .= ($request->phone_checkbox || $request->date_checkbox ) ? "<br>" : "";
-        $text .= $this->getTextLine($request->phone_checkbox, $request->phone, "Nº: ");
+        $text .= $this->getTextLine($request->phone_checkbox, ($request->phone_country == "us") ? "+1 " . $request->phone : $request->phone, "Nº: ");
         $text .= $this->getTextLine($request->date_checkbox, $request->date, "Data: ");
 
         $oneLine = "- " . $this->getOneLineText($text);
@@ -78,7 +79,7 @@ class CallcenterController extends Controller
         $text .= $this->getTextLine(true, str_replace("\n", "<br>", $request->details), "" );
         $text .= ($request->details ) ? "<hr>" : "";
         $text .= ($request->phone || $request->date ) ? "<br>" : "";
-        $text .= $this->getTextLine(true, $request->phone, "Nº: ");
+        $text .= $this->getTextLine(true, ($request->phone_country == "us") ? "+1 " . $request->phone : $request->phone, "Nº: ");
         $text .= $this->getTextLine(true, $request->date, "Data: ");
 
         $oneLine = $this->getOneLineText($text);

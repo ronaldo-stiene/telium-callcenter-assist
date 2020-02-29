@@ -8,6 +8,7 @@
  *
  * @author Ronaldo Stiene <ronaldo.stiene@outlook.com>
  * @since 18/02/2020
+ * @version v1.0.0
  */
 
 /**
@@ -72,14 +73,18 @@ $("#cc-invalid-call-btn").click(function () {
 /**
  * Função de obtenção de data.
  * 
+ * Atualização: Removido os caracteres que não sejam das datas.
+ * @since 28/02/2020
+ * @version v1.1.1
+ * 
  * @returns {string}
  */
 function getFormatedDate(){
     var date = new Date();
-    return String(date.getDate()).padStart(2, '0') + "/" + 
-    String(date.getMonth()).padStart(2, '0') + "/" + 
-    String(date.getFullYear()).padStart(4, '0') + " às " + 
-    String(date.getHours()).padStart(2, '0') + ":" + 
+    return String(date.getDate()).padStart(2, '0') +
+    String(date.getMonth()).padStart(2, '0') +
+    String(date.getFullYear()).padStart(4, '0') +
+    String(date.getHours()).padStart(2, '0') +
     String(date.getMinutes()).padStart(2, '0');
 }
 
