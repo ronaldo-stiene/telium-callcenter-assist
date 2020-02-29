@@ -23,6 +23,7 @@ class CallcenterController extends Controller
      * Exibe a view principal
      *
      * @return View
+     * @version v1.0.0
      */
     public function index(): View
     {
@@ -31,9 +32,13 @@ class CallcenterController extends Controller
 
     /**
      * Gera o texto e retorna a view de documentação de uma chamada normal.
+     * 
+     * Atualizado: Adicionado método que adiciona os detalhes ao texto final.
+     * @since 28/02/2020
      *
      * @param Request $request
      * @return View
+     * @version v1.0.1
      */
     public function normal(Request $request): View
     {
@@ -62,8 +67,13 @@ class CallcenterController extends Controller
     /**
      * Gera o texto e retorna a view de documentação de uma chamada por engano.
      *
+     * Atualizado: Adicionado método que adiciona os detalhes ao texto final e traço antes ]
+     * da frase em uma linha.
+     * @since 28/02/2020
+     * 
      * @param Request $request
      * @return View
+     * @version v1.0.1
      */
     public function invalid(Request $request): View
     {
@@ -94,6 +104,7 @@ class CallcenterController extends Controller
      * @param string $value
      * @param string $field
      * @return String
+     * @version v1.0.0
      */
     private function getTextLine($check, $value, $field): String
     {
@@ -110,6 +121,7 @@ class CallcenterController extends Controller
      * @param string $field
      * @param string $type
      * @return String
+     * @version v1.0.0
      */
     private function getReasonTextLine($value, $field, $type): String
     {
@@ -125,6 +137,7 @@ class CallcenterController extends Controller
      *
      * @param string $text
      * @return String
+     * @version v1.0.0
      */
     private function insertText(string $text): String
     {
@@ -139,6 +152,7 @@ class CallcenterController extends Controller
      *
      * @param string $text
      * @return String
+     * @version v1.0.0
      */
     private function getOneLineText(string $text): String
     {
@@ -156,6 +170,7 @@ class CallcenterController extends Controller
      * @param string $type
      * @param string $reason
      * @return String
+     * @version v1.0.0
      */
     private function getReason(string $type, string $reason): String
     {
@@ -170,6 +185,13 @@ class CallcenterController extends Controller
         }
     }
 
+    /**
+     * Acrescenta o texto de detalhes, caso contenha algo.
+     *
+     * @param string $details
+     * @return String
+     * @version v1.0.1
+     */
     private function getDetails($details)
     {
         $text = null;

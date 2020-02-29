@@ -16,6 +16,8 @@
 
 /**
  * Carrega e atualiza as mascaras.
+ * 
+ * @version v1.1.1
  */
 $1(window).load(function () {
     setIdMask('cc-normal-call-form');
@@ -40,6 +42,7 @@ $1(window).load(function () {
  * Define a máscara para o CNPJ e CPF.
  * 
  * @param {string} form 
+ * @version v1.1.1
  */
 function setIdMask(form) {
     var cnpj = [{ "mask": "99.999.999/9999-99" }];
@@ -66,6 +69,7 @@ function setIdMask(form) {
  * Define a máscara para os telefones.
  *
  * @param {string} form
+ * @version v1.1.1
  */
 function setPhoneMask(form)
 {
@@ -100,6 +104,7 @@ function setPhoneMask(form)
  * Define a máscara para as datas.
  *
  * @param {string} form
+ * @version v1.1.1
  */
 function setDateMask(form) {
     var date = [{ "mask": "99/99/9999 à\\s 99:99" }];
@@ -115,6 +120,7 @@ function setDateMask(form) {
  * Define a máscara para o número de evento.
  *
  * @param {string} form
+ * @version v1.1.1
  */
 function setEventMask(form) {
     var event = [{ "mask": "999999" }];

@@ -13,6 +13,8 @@
 
 /**
  * Ativa e desativa os inputs com base no checkbox.
+ * 
+ * @version v1.0.0
  */
 $('.cc-input-check').click(function () {
     if ($(this).find('.cc-input-checkbox').is(':checked')) {
@@ -31,6 +33,8 @@ $('.cc-input-check').click(function () {
 
 /**
  * Muda o placeholder da requisição de uma chamada normal.
+ * 
+ * @version v1.0.0
  */
 $('.cc-normal-call-reason').click(function () {
     if ($(this).find('.cc-reason-type').val() == 'rds') {
@@ -46,6 +50,8 @@ $('.cc-normal-call-reason').click(function () {
 
 /**
  * Funções que alteram os formulários visíveis
+ * 
+ * @version v1.0.0
  */
 $("#cc-normal-call-btn").click(function () {
     $("#cc-invalid-call-form").hide("slide", { direction: "left" }, 400);
@@ -75,9 +81,9 @@ $("#cc-invalid-call-btn").click(function () {
  * 
  * Atualização: Removido os caracteres que não sejam das datas.
  * @since 28/02/2020
- * @version v1.1.1
  * 
  * @returns {string}
+ * @version v1.1.1
  */
 function getFormatedDate(){
     var date = new Date();
@@ -93,6 +99,7 @@ function getFormatedDate(){
  * 
  * @param {string} from 
  * @param {string} to 
+ * @version v1.0.0
  */
 function equalInputs(from, to) {
     $("#cc-" + to + "-form" + " [name='name']").val( $("#cc-" + from + "-form" + " [name='name']").prop('value') )
@@ -107,6 +114,7 @@ function equalInputs(from, to) {
  * 
  * @param {string} from 
  * @param {string} to 
+ * @version v1.0.0
  */
 function activateInputs(from, to) {
     if ($("#cc-" + from + "-form" + " [name='name']").prop('value') != "") {

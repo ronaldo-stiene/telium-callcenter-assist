@@ -8,6 +8,7 @@
  *
  * @author Ronaldo Stiene <ronaldo.stiene@outlook.com>
  * @since 18/02/2020
+ * @version v1.0.0
  */
 
 /**
@@ -15,6 +16,7 @@
  * 
  * @param {string} element 
  * @param {bool} content 
+ * @version v1.0.0
  */
 function copyFullText(element, content = false) {
     if (content) {
@@ -33,6 +35,7 @@ function copyFullText(element, content = false) {
  * 
  * @param {string} element 
  * @param {bool} content 
+ * @version v1.0.0
  */
 function copyOneLineText(element, content = false) {
     if (content) {
@@ -50,6 +53,7 @@ function copyOneLineText(element, content = false) {
  * Realiza a operação de cópia. 
  * 
  * @param {string} textArea 
+ * @version v1.0.0
  */
 function copyTextClipboard(textArea) {
     textArea.select();

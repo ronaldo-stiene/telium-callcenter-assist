@@ -9,10 +9,13 @@
  *
  * @author Ronaldo Stiene <ronaldo.stiene@outlook.com>
  * @since 18/02/2020
+ * @version v1.0.0
  */
 
 /**
  * Recarrega o texto a cada alteração de tipo, caso o campo esteja vazio
+ * 
+ * @version v1.0.0
  */
 $('.cc-invalid-call-request').click(function () {
     if ($("#cc-invalid-call-details").html() == "") {
@@ -24,6 +27,7 @@ $('.cc-invalid-call-request').click(function () {
  * Recarrega o texto.
  * 
  * @param {string} element 
+ * @version v1.0.0
  */
 function textReload(element) {
     var name = $("#cc-invalid-call-form [name='name']").val();
@@ -70,6 +74,7 @@ function textReload(element) {
  * @param {string} name 
  * @param {string} gender 
  * @param {string} company 
+ * @version v1.0.0
  */
 function getClientText(name, gender, company) {
     var text = "";
@@ -95,6 +100,7 @@ function getClientText(name, gender, company) {
  * Gera o texto da transferência na Tentiva de contato.
  * 
  * @param {string} tran 
+ * @version v1.0.0
  */
 function getTranText(tran) {
     if (tran != "") {
@@ -110,6 +116,7 @@ function getTranText(tran) {
  * @param {string} name 
  * @param {string} gender 
  * @param {string} company 
+ * @version v1.0.0
  */
 function getEndedCallText(name, gender, company) {
     var text;
@@ -125,6 +132,7 @@ function getEndedCallText(name, gender, company) {
  * @param {string} name
  * @param {string} gender 
  * @param {string} company 
+ * @version v1.0.0
  */
 function getWrongCallText(name, gender, company) {
     var text;
@@ -140,6 +148,7 @@ function getWrongCallText(name, gender, company) {
  * @param {string} name
  * @param {string} gender
  * @param {string} company
+ * @version v1.0.0
  */
 function getMutedCallText(name, gender, company) {
     var text;
@@ -156,6 +165,7 @@ function getMutedCallText(name, gender, company) {
  * @param {string} gender
  * @param {string} company
  * @param {string} tran
+ * @version v1.0.0
  */
 function getContactCallText(name, gender, company, tran) {
     var text;
@@ -171,6 +181,7 @@ function getContactCallText(name, gender, company, tran) {
  * @param {string} name
  * @param {string} gender
  * @param {string} company
+ * @version v1.0.0
  */
 function getOfferCallText(name, gender, company) {
     var text;
@@ -188,6 +199,7 @@ function getOfferCallText(name, gender, company) {
  * @param {string} name 
  * @param {string} gender 
  * @param {string} company 
+ * @version v1.0.0
  */
 function getTelemarketingCallText(name, gender, company) {
     var text;
