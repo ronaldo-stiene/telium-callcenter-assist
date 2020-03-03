@@ -11,7 +11,7 @@
                             <input class="cc-input-checkbox" id="cc-invalid-call-name-checkbox" name="name_checkbox" type="checkbox">
                         </div>
                     </div>
-                    <select class="custom-select cc-input-select col-2" name="gender" disabled>
+                    <select class="custom-select cc-input-select col-3" name="gender" disabled>
                         <option value="sr">Sr.</option>
                         <option value="sra">Sra.</option>
                     </select>

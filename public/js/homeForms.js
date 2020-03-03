@@ -82,13 +82,16 @@ $("#cc-invalid-call-btn").click(function () {
  * Atualização: Removido os caracteres que não sejam das datas.
  * @since 28/02/2020
  * 
+ * Correção: Corrigo erro que mostrava o número do mês com um valor menor. (Ex: Março = 02)
+ * @since 03/03/2020
+ * 
  * @returns {string}
- * @version v1.1.1
+ * @version v1.1.2
  */
 function getFormatedDate(){
     var date = new Date();
     return String(date.getDate()).padStart(2, '0') +
-    String(date.getMonth()).padStart(2, '0') +
+    String(date.getMonth() + 1).padStart(2, '0') +
     String(date.getFullYear()).padStart(4, '0') +
     String(date.getHours()).padStart(2, '0') +
     String(date.getMinutes()).padStart(2, '0');

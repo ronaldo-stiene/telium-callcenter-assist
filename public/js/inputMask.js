@@ -67,13 +67,16 @@ function setIdMask(form) {
 
 /**
  * Define a máscara para os telefones.
+ * 
+ * Atualização: Adicionado mascará para ramal com 3 dígitos.
+ * @since 03/03/2020
  *
  * @param {string} form
- * @version v1.1.1
+ * @version v1.1.2
  */
 function setPhoneMask(form)
 {
-    var branch = [{ "mask": "9999" }, { "mask": "99999" }, { "mask": "999999" }];
+    var branch = [{ "mask": "999" }, { "mask": "9999" }, { "mask": "99999" }, { "mask": "999999" }];
     var brPhone = [{ "mask": "(99) 9999-9999" }, { "mask": "(99) 99999-9999" }];
     var usPhone = [{ "mask": "(999) 999-9999" }];
 
